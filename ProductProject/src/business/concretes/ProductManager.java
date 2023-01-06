@@ -34,12 +34,18 @@ public class ProductManager implements ProductService {
         product.setUnitPrice(2000);
         product.setUnitInStock(0);
         System.out.println(product.getId() +
-                            " " + product.getName() +
-                            " " + product.getCategoryId() +
-                            " " + product.getUnitPrice() +
-                            " " + product.getUnitInStock());
+                " " + product.getName() +
+                " " + product.getCategoryId() +
+                " " + product.getUnitPrice() +
+                " " + product.getUnitInStock());
 
         this.loggerService.logToSystem("Success");
+
+    }
+
+    @Override
+    public void delete(Product product) {
+        System.out.println("\nDeleted " + product.getName() + " with Hibernate!");
     }
 
 

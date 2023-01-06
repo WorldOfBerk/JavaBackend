@@ -10,7 +10,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         ProductService productService = new ProductManager(new HibernateProductDao(), new JLoggerManagerAdapter());
-        ProductDao productDao = new HibernateProductDao();
+
 
 
         //Products
@@ -18,12 +18,16 @@ public class Main {
         Product product2 = new Product(2, 2, "Chair", 225, 10);
         Product product3 = new Product(3, 3, "Sofa", 600, 2);
 
+
         productService.add(product1);
         productService.add(product2);
         productService.add(product3);
 
-        productDao.delete(product2);
-        productDao.delete(product3);
+
+
+        productService.delete(product2);
+        productService.delete(product3);
+
 
         productService.update(product1);
 
